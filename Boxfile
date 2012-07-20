@@ -1,0 +1,10 @@
+global:
+  env:
+    - PLATFORM: PAGODABOX
+web1:
+  name: wp-web
+  shared_writable_dirs:
+    - wp-content/cache/
+    - wp-content/uploads/
+db1:
+  name: wp-db
