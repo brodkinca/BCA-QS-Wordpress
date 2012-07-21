@@ -14,7 +14,7 @@
 
 Because this quickstart utilizes [Git submodules](http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html) a simple `git clone` isn't the easiest way to pull down the source.  Instead, issue the following command:
 
-`git clone --recursive <pagoda_repo_url>`
+    git clone --recursive <pagoda_repo_url>
 
 #### The Hard Way
 
@@ -23,9 +23,8 @@ If you already rushed into things and did a `git pull` you can do one of two thi
 1. Delete the repository from your computer and pull it down from Pagoda Box again using the "easy" instructions.
 2. Issue the following commands from your repository root and make it all better:
 
-`git submodule init
- git submodule update
-`
+    git submodule init
+    git submodule update
 
 ### 2. Customizing wp-config.php
 
@@ -49,7 +48,7 @@ Navigate to Wordpress on your development server using your computer's browser. 
 
 #### Manually
 
-Any plugins and themes can be manually added to the appropriate directories in `wp-content` and then deployed.  
+Any plugins and themes can be manually added to the appropriate directories in `wp-content` and then deployed.
 
 **Advanced Users:** One advantage of manually managing plugins and themes is that they can also become submodules.  Just add the theme or plugin submodule, and you can use the same techniques to manage and update the extension as you do for Wordpress.
 
@@ -57,11 +56,11 @@ Any plugins and themes can be manually added to the appropriate directories in `
 
 Afer commiting all of your changes, you can deploy Wordpress to Pagoda Box just like any other repository by executing:
 
-`git push origin master`
+    git push origin master
 
 If you have the Pagoda command line tool installed you can execute:
 
-`pagoda deploy`
+    pagoda deploy
 
 ## Why Submodules?
 
@@ -71,24 +70,24 @@ This quickstart is similar to other quickstarts for Wordpress except that it com
 
 When you want to upgrade to the latest version of Wordpress, just navigate to the hidden *wordpress* directory and issue the following command:
 
-`git fetch --tags
-git tag
-`
+    git fetch --tags
+    git tag
+
 This will ask Github for the versions of Wordpress available on the server.
 
 To switch to a version, just issue the following command:
 
-`git checkout <version>`
+    git checkout <version>
 
 For instance, if you wanted version 3.4.1 you would execute this command:
 
-`git checkout 3.4.1`
+    git checkout 3.4.1
 
 At this point you have the desired version of Wordpress and can test it in your local development environment.
 
 But wait, we're not done yet! To continue using this new Wordpress version you have to tell your local repository that you've switched versions.  To do so simply navigate back to your main repository and issue this command:
 
-`git commit wordpress -m 'Updated Wordpress'`
+    git commit wordpress -m 'Updated Wordpress'
 
 From now on your application will deploy with the current version!
 
