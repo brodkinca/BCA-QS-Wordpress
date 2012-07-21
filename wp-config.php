@@ -14,50 +14,44 @@
  * @package WordPress
  */
 
-// ** Path Settings - Wordpress loaded as a submodule ** //
+// ** Path Settings - Wordpress loaded as a submodule - DO NOT REMOVE!!! ** //
 define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
 define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
 define('WP_CONTENT_DIR', __DIR__ . '/wp-content');
 define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
 
-// ** WP Updater - Remind users that their filesystem is read-only ** //
-define('DISALLOW_FILE_MODS',true);
-
-// ** MySQL settings - You can get this info from your web host ** //
-if (isset($_SERVER['PLATFORM']))
+// ** Pagoda Box - If your database is not DB1, change the number accordingly. ** //
+if (isset($_SERVER['PLATFORM']) && $_SERVER['PLATFORM'] == 'PAGODABOX')
 {
-  if ($_SERVER['PLATFORM'] == 'PAGODABOX')
-  {
-    /** The name of the database for WordPress */
-    define('DB_NAME', $_SERVER['DB1_NAME']);
+  // ** WP Updater - Pagoda Box filesystem is read-only ** //
+  define('DISALLOW_FILE_MODS',true);
 
-    /** MySQL database username */
-    define('DB_USER', $_SERVER['DB1_USER']);
+  /** The name of the database for WordPress */
+  define('DB_NAME', $_SERVER['DB1_NAME']);
 
-    /** MySQL database password */
-    define('DB_PASSWORD', $_SERVER['DB1_PASS']);
+  /** MySQL database username */
+  define('DB_USER', $_SERVER['DB1_USER']);
 
-    /** MySQL hostname */
-    define('DB_HOST', $_SERVER['DB1_HOST']);
-  }
-  else
-  {
-    /** The name of the database for WordPress */
-    define('DB_NAME', 'wp_database');
+  /** MySQL database password */
+  define('DB_PASSWORD', $_SERVER['DB1_PASS']);
 
-    /** MySQL database username */
-    define('DB_USER', $_SERVER['DB_USER']);
-
-    /** MySQL database password */
-    define('DB_PASSWORD', $_SERVER['DB_PASS']);
-
-    /** MySQL hostname */
-    define('DB_HOST', $_SERVER['DB_HOST']);
-  }
+  /** MySQL hostname */
+  define('DB_HOST', $_SERVER['DB1_HOST']);
 }
+// ** Development Server - Change these values to match those of your dev server. ** //
 else
 {
-  exit('PLATFORM is undefined.');
+  /** The name of the database for WordPress */
+  define('DB_NAME', 'wp_database');
+
+  /** MySQL database username */
+  define('DB_USER', $_SERVER['DB_USER']);
+
+  /** MySQL database password */
+  define('DB_PASSWORD', $_SERVER['DB_PASS']);
+
+  /** MySQL hostname */
+  define('DB_HOST', $_SERVER['DB_HOST']);
 }
 
 /** Database Charset to use in creating database tables. */
