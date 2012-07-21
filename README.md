@@ -20,11 +20,11 @@ Because this quickstart utilizes [Git submodules](http://www.kernel.org/pub/soft
 
 If you already rushed into things and did a `git pull` you can do one of two things:
 
-  1. Delete the repository from your computer and pull it down from Pagoda Box again using the "easy" instructions.
-  2. Issue the following commands from your repository root and make it all better:
+    1. Delete the repository from your computer and pull it down from Pagoda Box again using the "easy" instructions.
+    2. Issue the following commands from your repository root and make it all better:
 
-      git submodule init
-      git submodule update
+        git submodule init
+        git submodule update
 
 ### 2. Customizing wp-config.php
 
