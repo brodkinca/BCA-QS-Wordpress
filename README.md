@@ -6,7 +6,7 @@
 
 Because this quickstart utilizes [Git submodules](http://www.kernel.org/pub/software/scm/git/docs/git-submodule.html) a simple `git clone` isn't the easiest way to pull down the source.  Instead, issue the following command:
 
-`git clone --recursive <repo_url>`
+`git clone --recursive <pagoda_repo_url>`
 
 ### The Hard Way
 
@@ -24,17 +24,30 @@ This quickstart is similar to other quickstarts for Wordpress except that it com
 
 ## Upgrading Wordpress
 
-When you want to pull down the latest version of Wordpress, just navigate to the hidden *wordpress* directory and issue the following command:
+When you want to upgrade to the latest version of Wordpress, just navigate to the hidden *wordpress* directory and issue the following command:
 
-`git pull origin master`
+`git fetch --tags
+git tag
+`
+This will ask Github for the versions of Wordpress available on the server.
 
-At this point you have the latest version of Wordpress and can test it in your local development environment.
+To switch to a version, just issue the following command:
+
+`git checkout <version>`
+
+For instance, if you wanted version 3.4.1 you would execute this command:
+
+`git checkout 3.4.1`
+
+At this point you have the desired version of Wordpress and can test it in your local development environment.
 
 But wait, we're not done yet! To continue using this new Wordpress version you have to tell your local repository that you've switched versions.  To do so simply navigate back to your main repository and issue this command:
 
 `git commit wordpress -m 'Updated Wordpress'`
 
-From now on your application will deploy with the latest version!
+From now on your application will deploy with the current version!
+
+**NOTE:** You may need to perform a database update before your site is usable!
 
 =================================================
 
