@@ -42,16 +42,16 @@ if (isset($_SERVER['PLATFORM']) && $_SERVER['PLATFORM'] == 'PAGODABOX')
 else
 {
   /** The name of the database for WordPress */
-  define('DB_NAME', 'wp_database');
+  define('DB_NAME', $_SERVER['DB1_NAME']);
 
   /** MySQL database username */
-  define('DB_USER', $_SERVER['DB_USER']);
+  define('DB_USER', $_SERVER['DB1_USER']);
 
   /** MySQL database password */
-  define('DB_PASSWORD', $_SERVER['DB_PASS']);
+  define('DB_PASSWORD', $_SERVER['DB1_PASS']);
 
   /** MySQL hostname */
-  define('DB_HOST', $_SERVER['DB_HOST']);
+  define('DB_HOST', $_SERVER['DB1_HOST']);
 }
 
 /** Database Charset to use in creating database tables. */
