@@ -18,7 +18,7 @@ Because this quickstart utilizes [Git submodules](http://www.kernel.org/pub/soft
 
 #### The Hard Way
 
-If you already rushed into things and did a `git pull` you can do one of two things:
+If you already rushed into things and did a `git clone` you can do one of two things:
 
 1. Delete the repository from your computer and pull it down from Pagoda Box again using the "easy" instructions.
 2. Issue the following commands from your repository root and make it all better:
